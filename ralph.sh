@@ -6,7 +6,7 @@ for i in $(seq 0 99); do
     echo '----------------------------------------'
     echo "ralph loop i=$i"
     echo '----------------------------------------'
-    if ./run_tests.sh > /tmp/out 2>&1; then
+    if docker compose exec -T -w /tmp/pagila-hw pg ./run_tests.sh > /tmp/out 2>&1; then
         echo "tests pass after $i rounds"
         exit 0
     fi
