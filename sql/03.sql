@@ -10,4 +10,4 @@ JOIN address USING (address_id)
 JOIN city USING (city_id)
 JOIN country USING (country_id)
 GROUP BY country
-ORDER BY sum(amount) DESC;
+ORDER BY sum(amount) DESC, country;
